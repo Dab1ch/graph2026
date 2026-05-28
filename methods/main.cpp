@@ -1,6 +1,6 @@
 /**
  * @file methods/main.cpp
- * @author Ilya Kozlov
+ * @author Mikhail Lozhnikov
  *
  * Файл с функией main() для серверной части программы.
  */

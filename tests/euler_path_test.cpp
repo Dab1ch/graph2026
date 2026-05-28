@@ -1,3 +1,7 @@
+/**
+* @author Ilya Kozlov
+**/
+
 #include <httplib.h>
 #include <unordered_set>
 #include <string>

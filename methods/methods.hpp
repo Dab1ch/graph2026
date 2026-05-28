@@ -13,8 +13,7 @@
 namespace graph {
 
 /* Сюда нужно вставить объявление серверной части алгоритма. */
-
-
+int EulerPathMethod(const nlohmann::json& input, nlohmann::json* output);
 
 /* Конец вставки. */
 

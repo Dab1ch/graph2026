@@ -116,6 +116,8 @@ add_executable(
   include/weighted_oriented_graph.hpp
   methods/main.cpp
   methods/methods.hpp
+  include/euler_path.hpp
+  methods/euler_path_method.cpp
 )
 
 ####################################################################
@@ -149,6 +151,8 @@ add_executable(
   tests/test_core.hpp
   tests/weighted_graph_test.cpp
   tests/weighted_oriented_graph_test.cpp
+  include/euler_path.hpp
+  tests/euler_path_test.cpp
 )
 
 #####################################################################

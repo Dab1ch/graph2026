@@ -1,6 +1,6 @@
 /**
  * @file methods/main.cpp
- * @author Mikhail Lozhnikov
+ * @author Ilya Kozlov
  *
  * Файл с функией main() для серверной части программы.
  */
@@ -36,7 +36,22 @@ int main(int argc, char* argv[]) {
 
   /* Сюда нужно вставить обработчик post запроса для алгоритма. */
 
+  svr.Post("/EulerPath", [&](const httplib::Request& req, httplib::Response& res) {
+    nlohmann::json input = nlohmann::json::parse(req.body);
+    nlohmann::json output;
 
+    /* Если метод завершился с ошибкой, то выставляем статус 400. */
+    if (graph::EulerPathMethod(input, &output) < 0)
+      res.status = 400;
+
+    /*
+    Метод nlohmann::json::dump() используется для сериализации
+    объекта типа nlohmann::json в строку. Метод set_content()
+    позволяет задать содержимое ответа на запрос. Если передаются
+    JSON данные, то MIME тип следует выставить application/json.
+    */
+    res.set_content(output.dump(), "application/json");
+  });
 
   /* Конец вставки. */
 

@@ -8,8 +8,10 @@
 #include <string>
 #include <unordered_set>
 #include <vector>
-#include <nlohmann/json.hpp>
+
 #include <httplib.h>
+
+#include <nlohmann/json.hpp>
 #include "test_core.hpp"
 
 static void EmptyGraphTest(httplib::Client* cli);

@@ -227,7 +227,7 @@ static void RandomTestHelper(httplib::Client* cli,
       REQUIRE_EQUAL(0, 0);  // граф неудачный
       continue;
     }
-    std::vector<int> result = std::vector<int>(output["result"]);
+    std::vector<int> result = output["result"];
     int m = edges.size();
     n += result.size();
     REQUIRE_EQUAL(

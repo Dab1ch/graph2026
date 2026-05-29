@@ -70,8 +70,8 @@ int EulerPathMethodHelper(const nlohmann::json& input, nlohmann::json* output) {
     (*output)["result"] = nlohmann::json::parse("[]");
     return 0;
   }
-  vector<int> vertices = vector<int>(input.at("vertices"));
-  vector<nlohmann::json> edges = vector<nlohmann::json>(input.at("edges"));
+  vector<int> vertices = input.at("vertices");
+  vector<nlohmann::json> edges = input.at("edges");
   int n = vertices.size();
   int m = edges.size();
   if (n == 0) {

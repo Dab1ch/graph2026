@@ -2,14 +2,13 @@
  * @author Ilya Kozlov
  **/
 
+#include <httplib.h>
 
 #include <algorithm>
 
 #include <string>
 #include <unordered_set>
 #include <vector>
-
-#include <httplib.h>
 
 #include <nlohmann/json.hpp>
 #include "test_core.hpp"

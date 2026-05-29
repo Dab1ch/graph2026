@@ -1,11 +1,11 @@
-#include <euler_path.hpp>
-#include <graph.hpp>
 #include <iostream>
-#include <nlohmann/json.hpp>
-#include <oriented_graph.hpp>
 #include <stack>
 #include <string>
 #include <vector>
+#include <euler_path.hpp>
+#include <graph.hpp>
+#include <nlohmann/json.hpp>
+#include <oriented_graph.hpp>
 #include <weighted_graph.hpp>
 #include <weighted_oriented_graph.hpp>
 
@@ -105,7 +105,7 @@ int EulerPathMethodHelper(const nlohmann::json& input, nlohmann::json* output) {
   int v1 = -1, v2 = -1;
   bool bad = false;
   for (int i = 0; i < n; ++i)
-    if (deg[i] & 1){
+    if (deg[i] & 1) {
       if (v1 == -1)
         v1 = i;
       else if (v2 == -1)
@@ -134,8 +134,8 @@ int EulerPathMethodHelper(const nlohmann::json& input, nlohmann::json* output) {
     }
   }
 
-  if (v1 != -1)
-    for (size_t i = 0; i + 1 < res.size(); ++i)
+  if (v1 != -1) {
+    for (size_t i = 0; i + 1 < res.size(); ++i) {
       if (((res[i] == v1) && (res[i + 1] == v2)) ||
           ((res[i] == v2) && (res[i + 1] == v1))) {
         vector<int> res2;
@@ -144,7 +144,8 @@ int EulerPathMethodHelper(const nlohmann::json& input, nlohmann::json* output) {
         res = res2;
         break;
       }
-
+    }
+  }
   for (int i = 0; i < n; ++i)
     for (int j = 0; j < n; ++j)
       if (g[i][j]) bad = true;

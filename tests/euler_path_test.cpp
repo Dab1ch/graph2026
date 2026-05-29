@@ -2,14 +2,14 @@
  * @author Ilya Kozlov
  **/
 
-#include <httplib.h>
 
 #include <algorithm>
-#include <nlohmann/json.hpp>
+
 #include <string>
 #include <unordered_set>
 #include <vector>
-
+#include <nlohmann/json.hpp>
+#include <httplib.h>
 #include "test_core.hpp"
 
 static void EmptyGraphTest(httplib::Client* cli);

@@ -7,4 +7,4 @@
 #ifndef INCLUDE_EULER_PATH_HPP_
 #define INCLUDE_EULER_PATH_HPP_
 
-#endif
+#endif // INCLUDE_EULER_PATH_HPP_

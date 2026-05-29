@@ -105,13 +105,14 @@ int EulerPathMethodHelper(const nlohmann::json& input, nlohmann::json* output) {
   int v1 = -1, v2 = -1;
   bool bad = false;
   for (int i = 0; i < n; ++i)
-    if (deg[i] & 1)
+    if (deg[i] & 1){
       if (v1 == -1)
         v1 = i;
       else if (v2 == -1)
         v2 = i;
       else
         bad = true;
+    }
 
   if (v1 != -1) ++g[v1][v2], ++g[v2][v1];
 
@@ -135,8 +136,8 @@ int EulerPathMethodHelper(const nlohmann::json& input, nlohmann::json* output) {
 
   if (v1 != -1)
     for (size_t i = 0; i + 1 < res.size(); ++i)
-      if (res[i] == v1 && res[i + 1] == v2 ||
-          res[i] == v2 && res[i + 1] == v1) {
+      if (((res[i] == v1) && (res[i + 1] == v2)) ||
+          ((res[i] == v2) && (res[i + 1] == v1))) {
         vector<int> res2;
         for (size_t j = i + 1; j < res.size(); ++j) res2.push_back(res[j]);
         for (size_t j = 1; j <= i; ++j) res2.push_back(res[j]);

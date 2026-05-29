@@ -188,7 +188,6 @@ static void RandomTestHelper(httplib::Client* cli,
     size_t numEdges = edgesSize(gen);
 
     std::vector<size_t> vertices;
-    std::vector<nlohmann::json> edges;
     nlohmann::json input;
 
     input["graph_type"] = graphType;
@@ -209,11 +208,6 @@ static void RandomTestHelper(httplib::Client* cli,
     }
 
     input["vertices"] = vertices;
-    if (input.contains("edges")) {
-      for (int i = 0; i < input["edges"].size(); i++) {
-        edges.push_back(input["edges"][i]);
-      }
-    }
     auto res = cli->Post("/EulerPath", input.dump(), "application/json");
 
     if (!res) {
@@ -228,7 +222,7 @@ static void RandomTestHelper(httplib::Client* cli,
       continue;
     }
     std::vector<int> result = output["result"];
-    int m = edges.size();
+    std::vector<nlohmann::json> edges = input.at("edges");
     n += result.size();
     REQUIRE_EQUAL(
         n,

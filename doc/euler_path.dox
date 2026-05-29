@@ -3,7 +3,8 @@
 @file euler_path.dox
 @author Ilya Kozlov
 
-@page algorithms Алгоритмы
+@page euler_path Нахождение Эйлерова пути
+
 
 Данный алгоритм находит в неориентированном графе путь, который проходит ровно по одному разу через каждое ребро.
 Код взят с сайта http://e-maxx.ru/algo/

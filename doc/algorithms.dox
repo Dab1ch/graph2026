@@ -6,5 +6,5 @@
 @page algorithms Алгоритмы
 
 Список реализованных алгоритмов:
-    Нахождение Эйлерова пути [[euler_path.dox]]
+- \subpage euler_path
 */
